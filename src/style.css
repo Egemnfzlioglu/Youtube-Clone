@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  width: 100%!important;
+  height: 100vh;
+}
+a,
+li,
+ul {
+  list-style: none!important;
+  text-decoration: none!important;
+}
+
+
+.bgLightapp {
+  background-color: white !important;
+  color: #111 !important;
+  list-style: none!important;
+  text-decoration: none !important;
+
+ 
+}
+.bgDarkapp {
+  background-color: #111 !important ;
+  color: white!important; 
+  list-style: none!important;
+  text-decoration: none!important;
+ 
+}
