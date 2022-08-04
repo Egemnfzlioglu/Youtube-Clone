@@ -1,23 +1,21 @@
 import React from "react";
-import { useParams } from 'react-router-dom';
+// import { useParams } from "react-router-dom";
 
 const HeaderMiddleBar = ({
-  items,
-  loading,
+  // items,
+  // loading,
   setLoading,
-  theme,
-  setTheme,
+  // theme,
+  // setTheme,
   search,
   setSearch,
-  fetchVideo,
+  // fetchVideo,
   fetchSearch,
+  // searchItems,
+  setSearchItems,
 }) => {
-
-  const useP = useParams();
+  // const useP = useParams();
   // console.log( useP);
-
-
-
 
   return (
     <div
@@ -27,11 +25,10 @@ const HeaderMiddleBar = ({
         alignItems: "center",
       }}
     >
-    {console.log(JSON.stringify(search))}
       <div style={{}}>
-      {/* <input " type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"/> */}
+        {/* <input " type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"/> */}
         <input
-        class="form-control form-control-sm"
+          className="form-control form-control-sm"
           type="text"
           placeholder="Search"
           value={search}
@@ -50,6 +47,12 @@ const HeaderMiddleBar = ({
         <button
           className="btn btn-outline-success border"
           type="submit"
+          onSubmit={(e) => {
+            e.preventDefault();
+            fetchSearch(search);
+            setSearchItems(search);
+            setLoading(false);
+          }}
           onClick={() => fetchSearch(search)}
           style={{
             padding: ".5rem 1rem",

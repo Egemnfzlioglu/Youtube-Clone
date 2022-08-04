@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderBarIcon from "../../Navbar/NavbarLeftComponent/HeaderBarIcon";
-import HeaderLogo from "../../Navbar/NavbarLeftComponent/HeaderLogo";
+// import HeaderBarIcon from "../../Navbar/NavbarLeftComponent/HeaderBarIcon";
+// import HeaderLogo from "../../Navbar/NavbarLeftComponent/HeaderLogo";
 import { AiFillHome } from "react-icons/ai";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavbarLeftComponent from "./../../Navbar/NavbarLeftComponent/NavbarLeftComponent";
 import {
   MdOutlineSubscriptions,
@@ -10,7 +10,7 @@ import {
   MdOutlineExplore,
 } from "react-icons/md";
 
-const AsideBarComponent = ({ theme, setTheme }) => {
+const AsideBarComponent = ({ theme }) => {
   return (
     <>
       <div
@@ -26,9 +26,10 @@ const AsideBarComponent = ({ theme, setTheme }) => {
         }}
       >
         <div
-          className={` ${theme}`}
+          className={` ${theme} `}
           style={{
-            padding: " 0 0 0 5.5vw ",
+            overflow:"hidden",
+            margin: "0  0 0 -.5rem",
           }}
         >
           <NavbarLeftComponent theme={theme} />
@@ -39,10 +40,10 @@ const AsideBarComponent = ({ theme, setTheme }) => {
         <div
           className={`fixed-top ${theme}`}
           style={{
-            margin: "4vw 0 ",
-            maxWidth: "5vw",
-            height: "100vh",
-            minHeight: "100vh",
+            margin: "7.1rem  0 0 -1rem",        
+          maxWidth: "4rem",
+          minHeight: "100vh",
+         
           }}
         >
           <ul
@@ -82,7 +83,7 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                         alignItems: "center",
                         // flexDirection: "",
 
-                        width: "10vw",
+                        width: "12rem",
                       }}
                     >
                       Ana Sayfa
@@ -97,10 +98,7 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                 <div className={` ${theme}`} style={{ margin: "1vh  0 " }}>
                   <button
                     className={` btn btn  ${theme}`}
-                    // data-bs-toggle="offcanvas"
-                    // href="#offcanvasExample"
-                    // role="button"
-                    // aria-controls="offcanvasExample"
+                  
                     style={{
                       fontSize: "1.75rem",
                       border: "none",
@@ -119,9 +117,9 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        // flexDirection: "",
+                      
 
-                        width: "7vw",
+                        width: "8.5rem",
                       }}
                     >
                       Keşfet
@@ -135,10 +133,7 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                 <div className={` ${theme}`} style={{ margin: "1vh  0 " }}>
                   <button
                     className={` btn btn  ${theme}`}
-                    // data-bs-toggle="offcanvas"
-                    // href="#offcanvasExample"
-                    // role="button"
-                    // aria-controls="offcanvasExample"
+                
                     style={{
                       fontSize: "1.3rem",
                       border: "none",
@@ -147,7 +142,6 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      justifyContent: "center",
                     }}
                   >
                     {" "}
@@ -159,10 +153,10 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                         justifyContent: "center",
 
                         alignItems: "center",
-                        // flexDirection: "",
+                     
                         fontSize: "1.5rem",
 
-                        width: "6.5vw",
+                        width: "8rem",
                       }}
                     >
                       Shorts
@@ -200,7 +194,7 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                         alignItems: "center",
                         // flexDirection: "",
 
-                        width: "12vw",
+                        width: "14rem",
                       }}
                     >
                       Subscriptions
@@ -237,7 +231,7 @@ const AsideBarComponent = ({ theme, setTheme }) => {
                         alignItems: "center",
                         // flexDirection: "",
 
-                        width: "10vw",
+                        width: "12rem",
                       }}
                     >
                       Kütüphane

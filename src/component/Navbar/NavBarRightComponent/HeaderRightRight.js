@@ -7,17 +7,17 @@ const HeaderRightRight = ({ theme, setTheme }) => {
   useEffect(() => {
     document.body.className = theme;
 
-    console.log(theme);
+    // console.log(theme);
     //eslint-disable-next-line
   });
 
   const toggleTheme = () => {
-    setTheme(theme === "bgDarkapp" ? "bgLightapp" : "bgDarkapp");
+    setTheme(theme === "Dark" ? "Light" : "Dark");
   };
 
   return (
     <>
-        <div
+      <div
         className="btn-group "
         aria-label="Button group with nested dropdown"
         style={{
@@ -90,19 +90,20 @@ const HeaderRightRight = ({ theme, setTheme }) => {
               </NavLink>
             </li>
             <li>
-              <span className={`dropdown-item  my-2 mr-2 border  ${theme}`}>
-                Theme
+              <span className={`dropdown-item  border  ${theme}`}>
+               
                 <button
                   className={`btn btn m-3 border  ${theme}`}
                   // className="btn btn-outline-success"
                   type="submit"
                   style={{
-                    padding: ".5rem 2rem ",
+                    padding: ".5rem  ",
                     fontSize: "1rem",
                   }}
                   onClick={() => toggleTheme()}
                 >
-                  {theme ? "Dark" : "Light"}
+                   Theme : {theme === "Dark" ? "Dark" : "Light"}
+                  
                 </button>
               </span>
             </li>

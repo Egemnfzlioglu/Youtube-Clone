@@ -1,15 +1,17 @@
 import React from "react";
-import ReactPlayer from "react-player";
-import { useParams, NavLink, Link, Outlet } from "react-router-dom";
-import VideosClicksSide from "./VİdeosClickSide";
+// import ReactPlayer from "react-player";
+import { useParams,
+  //  NavLink, Link, Outlet 
+  } from "react-router-dom";
+import VideosClicksSide from "./VideosClickSide";
 import Videos from "./../../../VideoList/Videos";
 
 const VideosClick = ({
   theme,
   setTheme,
   items,
-  loading,
-  setLoading,
+  // loading,
+  // setLoading,
   search,
   setSearch,
   fetchSearch,

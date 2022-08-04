@@ -1,9 +1,11 @@
 import React from "react";
-import ReactPlayer from "react-player";
-import { useParams, NavLink, Link, Outlet } from "react-router-dom";
-import Videos from './../../../VideoList/Videos';
+// import ReactPlayer from "react-player";
+import { 
+  // useParams, NavLink, 
+  Link, Outlet } from "react-router-dom";
+import Videos from "../../../VideoList/Videos";
 
-const VideosClicksSide = ({ items, theme }) => {
+const VideosClicksSide = ({ items }) => {
   return (
     <>
       <div
@@ -24,7 +26,7 @@ const VideosClicksSide = ({ items, theme }) => {
                 style={{
                   display: "flex",
                 }}
-         
+                key={item.id}
               >
                 {" "}
                 <Link to={`/${item.id}`}>
@@ -37,7 +39,7 @@ const VideosClicksSide = ({ items, theme }) => {
                       display: "flex",
                       // flexDirection: "column",
                       alignItems: "center",
-                      margin:"1%"
+                      margin: "1%",
                     }}
                     key={item.id}
                   >
@@ -45,13 +47,11 @@ const VideosClicksSide = ({ items, theme }) => {
                       className="col-9 "
                       style={{
                         margin: "1rem",
-
                       }}
-                 
-                 
+                      key={item.id}
                     >
-                    <Videos item={item} />
-                    
+                      <Videos item={item} key={item.id} />
+
                       {/* <ReactPlayer
                         url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}
                         title="YouTube video player"
@@ -65,25 +65,25 @@ const VideosClicksSide = ({ items, theme }) => {
                         allowFullScreen
                       /> */}
                     </div>
-                  
-                  <div
-                    className="col-6  "
-                    style={{
-                      padding: "1rem",
-                    }}
-                  >
-                    <div>
-                      <p>{item.snippet.title}</p>
-                      <p>{item.snippet.channelTitle}</p>
 
-                      <span>
-                        {Math.floor(Math.random() * 999) + "k views"}
+                    <div
+                      className="col-6  "
+                      style={{
+                        padding: "1rem",
+                      }}
+                    >
+                      <div>
+                        <p>{item.snippet.title}</p>
+                        <p>{item.snippet.channelTitle}</p>
 
-                        <span style={{ margin: " 0 0 0 1rem" }}>
-                          {item.snippet.publishedAt.slice(0, 10)}
+                        <span>
+                          {Math.floor(Math.random() * 999) + "k views"}
+
+                          <span style={{ margin: " 0 0 0 1rem" }}>
+                            {item.snippet.publishedAt.slice(0, 10)}
+                          </span>
                         </span>
-                      </span>
-                    </div>
+                      </div>
                     </div>
                   </div>{" "}
                   <Outlet />

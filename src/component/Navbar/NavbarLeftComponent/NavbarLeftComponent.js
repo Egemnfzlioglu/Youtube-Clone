@@ -5,24 +5,19 @@ import HeaderLogo from "../NavbarLeftComponent/HeaderLogo";
 
 const NavbarLeftComponent = ({ theme }) => {
   return (
-    <li theme={theme} 
-   
+    <li
+      theme={theme}
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: " 0 0.5rem ",
       }}
     >
       {" "}
-      <div  
-         className={` ${theme}`} style={{ 
-
-         }}>
+      <div className={` ${theme}`} style={{}}>
         <HeaderBarIcon theme={theme} />
       </div>
-      <div 
-         className={` ${theme}`}  style={{ padding: "0 5rem  " }}>
+      <div className={` ${theme}`} style={{ padding: "0 0 0 5rem  " }}>
         <HeaderLogo theme={theme} />
       </div>
     </li>

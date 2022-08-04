@@ -17,8 +17,8 @@ const Aside = ({ theme }) => {
       <div
         className={`fixed-top ${theme}`}
         style={{
-          margin: "6.75vh  0 0 0",        
-          maxWidth: "5vw",
+          margin: "4rem  0 0 0",        
+          maxWidth: "5rem",
           minHeight: "100vh",
           backgroundColor: "red",
           borderRight: "1px solid #e6e6e6",
@@ -31,14 +31,14 @@ const Aside = ({ theme }) => {
             flexDirection: "column",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "2vw 0",         
+            padding: "4rem 0",         
             backgroundColor: "red",
           }}
         >
           <li>
             <NavLink  to="/" 
               className={` ${theme}`}>
-              <div style={{ margin: "2vh 0 .5vh 0 " }}>
+              <div style={{ margin: "1vh 0 .5vh 0 " }}>
                 <button
                   className={` ${theme}`}
                 

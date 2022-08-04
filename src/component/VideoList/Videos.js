@@ -1,19 +1,23 @@
 import React from "react";
 import ReactPlayer from "react-player";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const Videos = ({
+  // theme,
   item,
-  items,
-  theme,
-  setTheme,
-  search,
-  setSearch,
-  fetchSearch,
-  fetchVideo,
+  // setTheme,
+  // items,
+  // loading,
+  // setLoading,
+  // search,
+  // setSearch,
+  // fetchSearch,
+  // fetchVideo,
+  // searchItems,
   width,
   height,
   playing,
+
 }) => {
   return (
     <>
@@ -25,22 +29,11 @@ const Videos = ({
             height={height || "100%"}
             controls={true}
             playing={playing || false}
-            loop={true}
+         
             frameBorder="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            onReady={() => {
-              console.log("onReady");
-
-              setTimeout(
-                () => {
-                  console.log("onReady");
-                  fetchVideo(search);
-                },
-
-                1000
-              );
-            }}
+          
           />
         </div>
       )}

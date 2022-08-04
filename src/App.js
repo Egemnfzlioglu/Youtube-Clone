@@ -1,5 +1,5 @@
 import { YoutubeContext } from "./context/Context";
-import { useEffect, useState, useContext } from "react";
+import { useEffect,  useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./style.css";
@@ -15,10 +15,11 @@ import Subscriptions from "./component/pages/Subscriptions";
 import Library from "./component/pages/Library";
 import UserProfile from "./component/pages/UserProfile";
 import Channel from "./component/pages/Channel";
-import ChangeUser from "./component/pages/Subscriptions copy";
+import ChangeUser from "./component/pages/ChangeUser";
 
 function App() {
-  const { items,
+  const {
+    items,
     loading,
     setLoading,
     theme,
@@ -26,17 +27,16 @@ function App() {
     search,
     setSearch,
     fetchVideo,
-    fetchSearch } = useContext(YoutubeContext);
+    fetchSearch,
+    searchItems,
+    setSearchItems,
+  } = useContext(YoutubeContext);
 
+  // useEffect(() => {
+  //   fetchVideo();
+  //   setLoading(false);
+  // }, []);
 
-  useEffect(() => {
-    fetchVideo();
-    setLoading(false);
-  }
-    , []);
-
-  
-   
   return (
     <>
       <BrowserRouter>
@@ -46,9 +46,9 @@ function App() {
           search={search}
           setSearch={setSearch}
           fetchSearch={fetchSearch}
-
-
-         />
+          searchItems={searchItems}
+          setSearchItems={setSearchItems}
+        />
         <AsideBarComponent theme={theme} setTheme={setTheme} />
 
         <Routes>
@@ -63,9 +63,10 @@ function App() {
                   loading={loading}
                   setLoading={setLoading}
                   fetchVideo={fetchVideo}
-
-                  
-                 
+                  search={search}
+                  setSearch={setSearch}
+                  fetchSearch={fetchSearch}
+                  searchItems={searchItems}
                 />
               }
             />

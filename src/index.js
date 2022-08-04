@@ -7,9 +7,9 @@ import { YoutubeProvider } from "./context/Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <YoutubeProvider>
       <App />
     </YoutubeProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

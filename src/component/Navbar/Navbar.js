@@ -7,15 +7,18 @@ import "../../style.css";
 import { Outlet } from "react-router-dom";
 import NavbarLeftComponent from "./NavbarLeftComponent/NavbarLeftComponent";
 
-const Navbar = ({ items,
-  loading,
-  setLoading,
+const Navbar = ({
+  items,
+  // loading,
+  // setLoading,
   theme,
   setTheme,
   search,
   setSearch,
-  fetchVideo,
-  fetchSearch}) => {
+  // fetchVideo,
+  fetchSearch,
+  searchItems,
+}) => {
   return (
     <ul
       className={`navbar navbar-expand-lg  sticky-top ${theme}`}
@@ -30,7 +33,7 @@ const Navbar = ({ items,
         borderBottom: "1px solid #e6e6e6",
       }}
     >
-      <NavbarLeftComponent theme={theme} items={items}  />
+      <NavbarLeftComponent theme={theme} items={items} />
 
       <div
         style={{
@@ -39,11 +42,16 @@ const Navbar = ({ items,
           alignItems: "center",
         }}
       >
-        <HeaderMiddleBar  theme={theme}
+        <HeaderMiddleBar
+          theme={theme}
           setTheme={setTheme}
           search={search}
           setSearch={setSearch}
-          fetchSearch={fetchSearch} items={items}/>
+          fetchSearch={fetchSearch}
+          items={items}
+          searchItems={searchItems}
+          
+        />
 
         <div style={{}}>
           <MicIcon />
@@ -52,7 +60,7 @@ const Navbar = ({ items,
       <div>
         <HeaderRightBar theme={theme} setTheme={setTheme} items={items} />
       </div>
-      <Outlet/>
+      <Outlet />
     </ul>
   );
 };
