@@ -10,8 +10,8 @@ const HeaderMiddleBar = ({
 }) => {
   // console.log("🚀 ~ file: HeaderMiddleBar.js ~ line 17 ~ searchItems", searchItems)
   // console.log("🚀 ~ file: HeaderMiddleBar.js ~ line 17 ~ search", search)
-  const useP = useParams();
-  console.log("useP", useP);
+  // const useP = useParams();
+  // console.log("useP", useP);
 
   return (
     <div

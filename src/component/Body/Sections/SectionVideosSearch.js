@@ -14,7 +14,7 @@ import {
   const SectionVideosSearch = (props) => {
   // console.log("SectionVideosSearch", props);  
   const usep=useParams();
-  console.log("🚀 ~ file: SectionVideosSearch.js ~ line 10 ~ useParams", usep)
+  // console.log("🚀 ~ file: SectionVideosSearch.js ~ line 10 ~ useParams", usep)
   return (
     <>
       <div

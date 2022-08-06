@@ -25,56 +25,44 @@ const VideosClicksSide = ({ items, theme }) => {
               {/* videolar */}
 
               <div
-                className={` col-8`}
+                className={` col-12`}
                 style={{
                   display: "flex",
+                  borderBottom: "1px solid #ccc",
                 }}
                 key={item.id}
               >
                 {" "}
                 <Link to={`/${item.id}`}>
                   <div
-                    className="col-12   "
+                    className="col-11   "
                     style={{
                       width: `${item.width}`,
                       height: `${item.height}`,
                       // height: "90vh",
                       display: "flex",
-                      // flexDirection: "column",
+                      flexDirection: "row",
                       alignItems: "center",
                       margin: "1%",
                     }}
                     key={item.id}
                   >
                     <div
-                      className="col-9 "
+                      className="col-5 "
                       style={{
                         margin: "1rem",
+                        width: "300px",
                       }}
                       key={item.id}
                     >
                       <Videos item={item} key={item.id} />
-                      {/* <Videos item={item} key={item.id} /> */}
-                      {/* <VideosSearch item={item} key={item.id.videoId} /> */}
-
-                      {/* <ReactPlayer
-                        url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}
-                        title="YouTube video player"
-                        height={`${item.height}px`}
-                        width={`${item.width}px}`}
-                        // q={`${item.id}`}
-                        controls={true}
-                        playing={false}
-                        frameBorder="1"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      /> */}
+                    
                     </div>
 
                     <div
-                      className={` col-6 ${theme}`}
+                      className={` col-4 ${theme}`}
                       style={{
-                        padding: "1rem",
+                        // padding: "1rem",
                       }}
                     >
                       <div>

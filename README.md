@@ -4,6 +4,10 @@ https://youtube-clone-egemen.netlify.app
 
 
 
+  Update available 10.7.1 → 10.15.0    │
+   │    Run npm i netlify-cli to update
+
+
 
 
 

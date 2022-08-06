@@ -19,6 +19,7 @@ import ChangeUser from "./component/pages/ChangeUser";
 import Search from "./component/Navbar/NavbarMiddleComponent/Search";
 import PlayerSearchPageClick from "./component/Body/Sections/playerSearchPage/playerSearchPageClick";
 import SectionVideosSearch from "./component/Body/Sections/SectionVideosSearch";
+import PlayerSearchPageClickSide from './component/Body/Sections/playerSearchPage/playerSearchPageClickSide';
 
 function App() {
   const {
@@ -52,8 +53,6 @@ function App() {
               element={<SectionVideos theme={theme} items={items} />}
             />
 
-           
-
             <Route path="explore" element={<Explore theme={theme} />} />
             <Route path="shorts" element={<Shorts theme={theme} />} />
             <Route
@@ -71,27 +70,30 @@ function App() {
             element={<VideosClick theme={theme} items={items} />}
           />
 
-<Route path="search" element={<Search theme={theme} />} />
-            <Route
-              path="/search/:result"
-              element={
-                <SectionVideosSearch theme={theme} searchItems={searchItems} />
-              }
-            />
+          <Route path="search" element={<Search theme={theme} />} />
+          <Route
+            path="search/:result"
+            element={
+              <SectionVideosSearch theme={theme} searchItems={searchItems} />
+            }
+          />
 
-            <Route
-              // path=":videoId"
-              path="search/:result/:videoId"
-              element={
-                <PlayerSearchPageClick
-                  theme={theme}
-                  searchItems={searchItems}
-                />
-              }
-            />
+          <Route
+            // path=":videoId"
+            path="search/:result/:videoId"
+            element={
+              <PlayerSearchPageClick theme={theme} searchItems={searchItems}   search={search} />
+            }
+          />
+          <Route
+            // path=":videoId"
+            path="search/:result/:videoId"
+            element={
+              <PlayerSearchPageClickSide theme={theme} searchItems={searchItems}  />
+            }
+          />
 
-{/* </Route> */}
-
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
     </>

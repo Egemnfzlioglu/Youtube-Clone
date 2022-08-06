@@ -4,24 +4,24 @@ import { useParams, Outlet } from "react-router-dom";
 import PlayerSearchPageClickSide from "./playerSearchPageClickSide";
 import VideosSearch from "../../../VideoList/VideosSearch";
 
-const PlayerSearchPageClick = ({ searchItems }) => {
+const PlayerSearchPageClick = ({ searchItems, theme, search }) => {
   // console.log("PlayerSearchPageClick", props);
   const params = useParams();
-  console.log(
-    "🚀 ~ file: PlayerSearchPageClick.js ~ line 10 ~ useParams",
-    params
-  );
+  // console.log(
+  //   "🚀 ~ file: PlayerSearchPageClick.js ~ line 10 ~ useParams",
+  //   params
+  // );
   return (
     <>
       <div className="container-fluid">
         {searchItems.map((itemSearch) => {
-          if (itemSearch?.id?.videoId === params?.videoId) {
-            console.log("itemSearch", itemSearch);
-            console.log("params", params);
+          if (itemSearch.id.videoId === params.videoId) {
+            // console.log("itemSearch", itemSearch);
+            // console.log("params", params);
             // burası çalışıyor tıklanınca
-            {
-              console.log(itemSearch.id, "itemSearch");
-            }
+            // {
+            //   console.log(itemSearch, "itemSearch");
+            // }
 
             return (
               <div
@@ -148,13 +148,12 @@ const PlayerSearchPageClick = ({ searchItems }) => {
                 </div>
 
                 <div className="col-4">
-                  deneme
-                  {/* <PlayerSearchPageClickSide                 
-                    // searchItems={searchItems}
-                    // ###
+                  <PlayerSearchPageClickSide
+                    searchItems={searchItems}
+                    search={search}
+                    theme={theme}
                     key={itemSearch.id.videoId}
-                    itemSearch={itemSearch}                  
-                  />  */}
+                  />
                   {/* bunda bir sıkıntı var */}
                 </div>
               </div>

@@ -5,8 +5,8 @@ export const YoutubeContext = React.createContext();
 
 // AIzaSyA22spR8sAYEDiTml5puNbKnvhV7qoez5s
 
-// const API_KEY = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
-const API_KEY = "AIzaSyCS7Y2F7Q0fnm7w1OyIwwFw3Gmb3H6PsZw";
+// const API_KEY_SEARCH = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
+const API_KEY = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
 const BASE_URL = "https://youtube.googleapis.com/youtube/v3/videos?"; //soru işareti olmadan hata veriyor.
 const BASE_URL_SEARCH = "https://youtube.googleapis.com/youtube/v3/search?"; //soru işareti olmadan hata veriyor.
 // yardımcı kaynak https://youtu.be/fOKgHld96mU?t=1700
