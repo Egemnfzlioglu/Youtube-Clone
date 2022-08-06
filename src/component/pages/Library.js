@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Library = ({theme}) => {
   return (
     <div className={`container ${theme}`}>
-      <h1 > Library (tadilattayız :D)</h1>
+      <h1 > Kütüphane (tadilattayız :D)</h1>
       <Link to="/">Ana Sayfaya Dön </Link>
     </div>
   );

@@ -1,5 +1,5 @@
 import { YoutubeContext } from "./context/Context";
-import { useEffect,  useContext } from "react";
+import { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./style.css";
@@ -16,26 +16,20 @@ import Library from "./component/pages/Library";
 import UserProfile from "./component/pages/UserProfile";
 import Channel from "./component/pages/Channel";
 import ChangeUser from "./component/pages/ChangeUser";
+import Search from "./component/Navbar/NavbarMiddleComponent/Search";
+import PlayerSearchPageClick from "./component/Body/Sections/playerSearchPage/playerSearchPageClick";
+import SectionVideosSearch from "./component/Body/Sections/SectionVideosSearch";
 
 function App() {
   const {
     items,
-    loading,
-    setLoading,
     theme,
     setTheme,
     search,
     setSearch,
-    fetchVideo,
     fetchSearch,
     searchItems,
-    setSearchItems,
   } = useContext(YoutubeContext);
-
-  // useEffect(() => {
-  //   fetchVideo();
-  //   setLoading(false);
-  // }, []);
 
   return (
     <>
@@ -47,29 +41,19 @@ function App() {
           setSearch={setSearch}
           fetchSearch={fetchSearch}
           searchItems={searchItems}
-          setSearchItems={setSearchItems}
         />
-        <AsideBarComponent theme={theme} setTheme={setTheme} />
+
+        <AsideBarComponent theme={theme} />
 
         <Routes>
           <Route path="/" element={<Aside theme={theme} />}>
             <Route
-              path=""
-              element={
-                <SectionVideos
-                  theme={theme}
-                  setTheme={setTheme}
-                  items={items}
-                  loading={loading}
-                  setLoading={setLoading}
-                  fetchVideo={fetchVideo}
-                  search={search}
-                  setSearch={setSearch}
-                  fetchSearch={fetchSearch}
-                  searchItems={searchItems}
-                />
-              }
+              path="/"
+              element={<SectionVideos theme={theme} items={items} />}
             />
+
+           
+
             <Route path="explore" element={<Explore theme={theme} />} />
             <Route path="shorts" element={<Shorts theme={theme} />} />
             <Route
@@ -83,11 +67,31 @@ function App() {
           </Route>
 
           <Route
-            path=":id"
-            element={
-              <VideosClick theme={theme} setTheme={setTheme} items={items} />
-            }
+            path="/:id"
+            element={<VideosClick theme={theme} items={items} />}
           />
+
+<Route path="search" element={<Search theme={theme} />} />
+            <Route
+              path="/search/:result"
+              element={
+                <SectionVideosSearch theme={theme} searchItems={searchItems} />
+              }
+            />
+
+            <Route
+              // path=":videoId"
+              path="search/:result/:videoId"
+              element={
+                <PlayerSearchPageClick
+                  theme={theme}
+                  searchItems={searchItems}
+                />
+              }
+            />
+
+{/* </Route> */}
+
         </Routes>
       </BrowserRouter>
     </>

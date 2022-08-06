@@ -1,11 +1,14 @@
 import React from "react";
 // import ReactPlayer from "react-player";
-import { 
-  // useParams, NavLink, 
-  Link, Outlet } from "react-router-dom";
+import {
+  // useParams, NavLink,
+  Link,
+  Outlet,
+} from "react-router-dom";
 import Videos from "../../../VideoList/Videos";
+// import VideosSearch from "../../../VideoList/VideosSearch";
 
-const VideosClicksSide = ({ items }) => {
+const VideosClicksSide = ({ items, theme }) => {
   return (
     <>
       <div
@@ -22,7 +25,7 @@ const VideosClicksSide = ({ items }) => {
               {/* videolar */}
 
               <div
-                className="col-8 "
+                className={` col-8`}
                 style={{
                   display: "flex",
                 }}
@@ -51,6 +54,8 @@ const VideosClicksSide = ({ items }) => {
                       key={item.id}
                     >
                       <Videos item={item} key={item.id} />
+                      {/* <Videos item={item} key={item.id} /> */}
+                      {/* <VideosSearch item={item} key={item.id.videoId} /> */}
 
                       {/* <ReactPlayer
                         url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}
@@ -67,7 +72,7 @@ const VideosClicksSide = ({ items }) => {
                     </div>
 
                     <div
-                      className="col-6  "
+                      className={` col-6 ${theme}`}
                       style={{
                         padding: "1rem",
                       }}

@@ -1,6 +1,4 @@
 import React from "react";
-// import HeaderBarIcon from "../../Navbar/NavbarLeftComponent/HeaderBarIcon";
-// import HeaderLogo from "../../Navbar/NavbarLeftComponent/HeaderLogo";
 import { AiFillHome } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import NavbarLeftComponent from "./../../Navbar/NavbarLeftComponent/NavbarLeftComponent";
@@ -194,10 +192,10 @@ const AsideBarComponent = ({ theme }) => {
                         alignItems: "center",
                         // flexDirection: "",
 
-                        width: "14rem",
+                        width: "12rem",
                       }}
                     >
-                      Subscriptions
+                      Abonelikler
                     </span>
                   </button>
                 </div>

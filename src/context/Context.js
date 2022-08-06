@@ -5,7 +5,8 @@ export const YoutubeContext = React.createContext();
 
 // AIzaSyA22spR8sAYEDiTml5puNbKnvhV7qoez5s
 
-const API_KEY = "AIzaSyA22spR8sAYEDiTml5puNbKnvhV7qoez5s";
+// const API_KEY = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
+const API_KEY = "AIzaSyCS7Y2F7Q0fnm7w1OyIwwFw3Gmb3H6PsZw";
 const BASE_URL = "https://youtube.googleapis.com/youtube/v3/videos?"; //soru işareti olmadan hata veriyor.
 const BASE_URL_SEARCH = "https://youtube.googleapis.com/youtube/v3/search?"; //soru işareti olmadan hata veriyor.
 // yardımcı kaynak https://youtu.be/fOKgHld96mU?t=1700
@@ -27,7 +28,7 @@ export const YoutubeProvider = ({ children }) => {
       BASE_URL +
         new URLSearchParams({
           key: API_KEY,
-          maxResults: 10,
+          maxResults: 30,
           part: "snippet",
           chart: "mostPopular",
           type: "video",
@@ -52,10 +53,8 @@ export const YoutubeProvider = ({ children }) => {
         new URLSearchParams({
           q: search,
           key: API_KEY,
-          maxResults: 5,
-          // part: "snippet",
-          // chart: "mostPopular",
-          // regionCode: "TR",
+          maxResults:30,
+          part: "snippet",
         })
     );
 
@@ -74,7 +73,7 @@ export const YoutubeProvider = ({ children }) => {
       // {console.log(fetchVideo(search));}
     }
   }, [search]);
-  console.log(searchItems);
+  // console.log(search);
   useEffect(() => {
     if (!search) {
       fetchVideo();
@@ -89,15 +88,16 @@ export const YoutubeProvider = ({ children }) => {
       value={{
         items,
         loading,
-        setLoading,
         theme,
-        setTheme,
         search,
+        searchItems,
+        setItems,
+        setLoading,
+        setTheme,
         setSearch,
+        setSearchItems,
         fetchVideo,
         fetchSearch,
-        searchItems,
-        setSearchItems,
       }}
     >
       {children}

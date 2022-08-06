@@ -1,35 +1,41 @@
 import React from "react";
 // import ReactPlayer from "react-player";
 import { useParams, Outlet } from "react-router-dom";
-import VideosClicksSide from "./VideosClickSide";
-import Videos from "./../../../VideoList/Videos";
-// import VideosSearch from "./../../../VideoList/VideosSearch";
+import PlayerSearchPageClickSide from "./playerSearchPageClickSide";
+import VideosSearch from "../../../VideoList/VideosSearch";
 
-const VideosClick = ({
-  // item,
-  theme,
-  items,
-}) => {
+const PlayerSearchPageClick = ({ searchItems }) => {
+  // console.log("PlayerSearchPageClick", props);
   const params = useParams();
+  console.log(
+    "🚀 ~ file: PlayerSearchPageClick.js ~ line 10 ~ useParams",
+    params
+  );
   return (
     <>
       <div className="container-fluid">
-        {items?.map((item) => {
-          if (item?.id === params?.id) {
-            // console.log(item);
+        {searchItems.map((itemSearch) => {
+          if (itemSearch?.id?.videoId === params?.videoId) {
+            console.log("itemSearch", itemSearch);
+            console.log("params", params);
+            // burası çalışıyor tıklanınca
+            {
+              console.log(itemSearch.id, "itemSearch");
+            }
+
             return (
               <div
                 className="
-                col
-                 d-flex 
-                 geneldiv"
+                  col
+                   d-flex
+                   geneldiv"
                 style={{
                   height: "90vh",
                   display: "flex",
                   flexWrap: "wrap",
                   overflow: "hidden",
                 }}
-                key={item.id}
+                key={itemSearch.id.videoId}
               >
                 {/* player */}
                 <div
@@ -43,37 +49,38 @@ const VideosClick = ({
                     className="col  tıklanan video"
                     style={{
                       // backgroundColor: "red",
-                      width: `${item.width}`,
-                      height: `${item.height}`,
+                      width: `${itemSearch.width}`,
+                      height: `${itemSearch.height}`,
                       margin: "0  5vw ",
                     }}
                   >
                     <div
                       className=" col-12 offset-1"
                       style={{
-                        width: `${item.width}`,
-                        height: `${item.height}`,
+                        width: `${itemSearch.width}`,
+                        height: `${itemSearch.height}`,
                         margin: "0  1vw ",
                       }}
                     >
-                      <Videos
-                        item={item}
+                      <VideosSearch
+                        itemSearch={itemSearch}
+                        key={itemSearch.id.videoId}
                         height="55vh"
                         width="100%"
                         playing={true}
                       />
 
                       {/* <ReactPlayer
-                        url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}
-                        title="YouTube video player"
-                        height="50vh"
-                        width="100%"
-                        controls={true}
-                        playing={true}
-                        frameBorder="1"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      /> */}
+                          url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}
+                          title="YouTube video player"
+                          height="50vh"
+                          width="100%"
+                          controls={true}
+                          playing={true}
+                          frameBorder="1"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        /> */}
                     </div>
 
                     <div
@@ -97,26 +104,24 @@ const VideosClick = ({
                           }}
                         >
                           <button
-                            theme={theme}
                             className="btn btn-outline-secondary"
                             style={{ margin: " 1rem", border: "none" }}
                           >
                             <i className="fas fa-thumbs-up" />
                           </button>
                           <button
-                            theme={theme}
                             className="btn btn-outline-secondary"
                             style={{ margin: " 1rem", border: "none" }}
                           >
                             <i className="fas fa-thumbs-down" />
                           </button>
                         </span>
-                        <h4>{item.snippet.title} </h4>
+                        <h4>{itemSearch.snippet.title} </h4>
 
-                        <h6 >{item.snippet.channelTitle}</h6>
+                        <h5>{itemSearch.snippet.channelTitle}</h5>
 
                         <p style={{ height: "15vh", overflow: "scroll" }}>
-                          {item.snippet.description}
+                          {itemSearch.snippet.description}
                         </p>
                         <div
                           className=""
@@ -130,7 +135,7 @@ const VideosClick = ({
                             {Math.floor(Math.random() * 999) + "k views"}
 
                             <span style={{ margin: " 0 0 0 1rem" }}>
-                              {item.snippet.publishedAt.slice(0, 10)}
+                              {itemSearch.snippet.publishedAt.slice(0, 10)}
                             </span>
                           </span>
 
@@ -142,7 +147,16 @@ const VideosClick = ({
                   <Outlet />
                 </div>
 
-                <VideosClicksSide theme={theme} items={items} />
+                <div className="col-4">
+                  deneme
+                  {/* <PlayerSearchPageClickSide                 
+                    // searchItems={searchItems}
+                    // ###
+                    key={itemSearch.id.videoId}
+                    itemSearch={itemSearch}                  
+                  />  */}
+                  {/* bunda bir sıkıntı var */}
+                </div>
               </div>
             );
           }
@@ -152,6 +166,6 @@ const VideosClick = ({
   );
 };
 
-export default VideosClick;
+export default PlayerSearchPageClick;
 
 // border

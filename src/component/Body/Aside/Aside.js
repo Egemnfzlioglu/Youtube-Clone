@@ -132,7 +132,7 @@ const Aside = ({ theme }) => {
                   }}
                 >
                   <MdOutlineSubscriptions />
-                  <p style={{ fontSize: ".75rem" }}>Subscriptions</p>
+                  <p style={{ fontSize: ".75rem" }}>Abonelikler</p>
                 </button>
               </div>
             </NavLink>

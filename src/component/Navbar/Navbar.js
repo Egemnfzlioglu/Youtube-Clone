@@ -8,14 +8,10 @@ import { Outlet } from "react-router-dom";
 import NavbarLeftComponent from "./NavbarLeftComponent/NavbarLeftComponent";
 
 const Navbar = ({
-  items,
-  // loading,
-  // setLoading,
   theme,
   setTheme,
   search,
   setSearch,
-  // fetchVideo,
   fetchSearch,
   searchItems,
 }) => {
@@ -33,7 +29,7 @@ const Navbar = ({
         borderBottom: "1px solid #e6e6e6",
       }}
     >
-      <NavbarLeftComponent theme={theme} items={items} />
+      <NavbarLeftComponent theme={theme} />
 
       <div
         style={{
@@ -44,21 +40,18 @@ const Navbar = ({
       >
         <HeaderMiddleBar
           theme={theme}
-          setTheme={setTheme}
           search={search}
           setSearch={setSearch}
           fetchSearch={fetchSearch}
-          items={items}
           searchItems={searchItems}
-          
         />
-
-        <div style={{}}>
+        <div style={{ padding: "2rem" }}>
           <MicIcon />
         </div>
       </div>
+
       <div>
-        <HeaderRightBar theme={theme} setTheme={setTheme} items={items} />
+        <HeaderRightBar theme={theme} setTheme={setTheme} />
       </div>
       <Outlet />
     </ul>

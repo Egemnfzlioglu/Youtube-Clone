@@ -2,18 +2,8 @@ import React from "react";
 import ReactPlayer from "react-player";
 // import { useParams } from "react-router-dom";
 
-const Videos = ({
-  // theme,
-  item,
-  // setTheme,
-  // items,
-  // loading,
-  // setLoading,
-  // search,
-  // setSearch,
-  // fetchSearch,
-  // fetchVideo,
-  // searchItems,
+const Videos = ({ 
+  item,  
   width,
   height,
   playing,
@@ -21,7 +11,7 @@ const Videos = ({
 }) => {
   return (
     <>
-      {item && (
+      { (
         <div className="video-container">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}

@@ -1,24 +1,14 @@
 import React from "react";
 // import ReactPlayer from "react-player";
-import { Link,
+import {
+  Link,
   //  NavLink,
-    Outlet, 
-  //  useParams 
-  } from "react-router-dom";
+  Outlet,
+  //  useParams
+} from "react-router-dom";
 import Videos from "./../../VideoList/Videos";
 
-const SectionVideos = ({
-  theme,
-  setTheme,
-  items,
-  // loading,
-  // setLoading,
-  search,
-  setSearch,
-  fetchSearch,
-  fetchVideo,
-  searchItems,
-}) => {
+const SectionVideos = ({ theme, items }) => {
   // console.log("🚀 ~ file: SectionVideos.js ~ line 17 ~ search", search)
   // console.log("🚀 ~ file: SectionVideos.js ~ line 17 ~ items", items)
   // const useP = useParams();
@@ -52,27 +42,8 @@ const SectionVideos = ({
               key={item.id}
             >
               <Link to={`${item.id}`}>
-                <Videos
-                  item={item}
-                  theme={theme}
-                  setTheme={setTheme}
-                  search={search}
-                  setSearch={setSearch}
-                  fetchSearch={fetchSearch}
-                  fetchVideo={fetchVideo}
-                  height={item.height}
-                  searchItems={searchItems}
-                />
-                {/* <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${item.id}`}
-            title="YouTube video player"
-            controls={true}
-            width="26em"
-            height="15em"
-            frameBorder="1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          /> */}
+                <Videos item={item} height={item.height} width={item.width} />
+
                 {/* ########################################## */}
                 {/* VİDEO DETAY KISMI */}
                 {/* ########################################## */}
@@ -101,17 +72,6 @@ const SectionVideos = ({
                       {item.snippet.channelTitle}{" "}
                     </span>
 
-                    <div
-                      className={`  ${theme}`}
-                      style={{
-                        fontSize: ".8rem",
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        flexWrap: "wrap",
-                        padding: "1% 2%",
-                      }}
-                    ></div>
                     <p className={`  ${theme}`}>
                       {Math.floor(Math.random() * 999) + "k views"}
 
@@ -123,10 +83,6 @@ const SectionVideos = ({
                 </div>
                 <Outlet />
               </Link>
-
-              {/* ########################################## */}
-              {/* PLAYER KISMI ve Linkleme*/}
-              {/* ########################################## */}
             </div>
           ))}
       </div>
