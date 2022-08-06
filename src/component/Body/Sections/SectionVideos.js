@@ -23,7 +23,7 @@ const SectionVideos = ({ theme, items }) => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          margin: "  2rem ",
+          padding: " 0 1.5rem  ",
         }}
       >
         {items &&
@@ -33,7 +33,7 @@ const SectionVideos = ({ theme, items }) => {
               style={{
                 width: "21em",
                 height: "20%",
-                margin: "  2rem ",
+                margin: " 1rem ",
                 // padding: ".5% 0 0 1%",
                 display: "flex",
                 justifyContent: "center",
@@ -72,10 +72,10 @@ const SectionVideos = ({ theme, items }) => {
                       {item.snippet.channelTitle}{" "}
                     </span>
 
-                    <p className={`  ${theme}`}>
+                    <p className={`px-2  ${theme}`}>
                       {Math.floor(Math.random() * 999) + "k views"}
 
-                      <span style={{ margin: " 0 0 0 1rem" }}>
+                      <span style={{ margin: " 0  1rem" }}>
                         {item.snippet.publishedAt.slice(0, 10)}
                       </span>
                     </p>

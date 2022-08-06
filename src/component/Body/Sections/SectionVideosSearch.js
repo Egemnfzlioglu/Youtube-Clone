@@ -25,7 +25,7 @@ import {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          margin: "  2rem ",
+          padding: " 0 1.5rem  ",
         }}
       >
         {props.searchItems &&

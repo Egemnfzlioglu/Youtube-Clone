@@ -31,7 +31,7 @@ const HeaderMiddleBar = ({
         // aria-label="Recipient's username"
         // aria-describedby="button-addon2"
         style={{
-          width: "75vh",
+          width: "50vh",
           fontSize: "1.5rem",
           border: "none",
           outline: "none",
@@ -41,9 +41,9 @@ const HeaderMiddleBar = ({
         }}
       />
 
-      <Link to={`search/${search}`} style={{}}>
+      <Link to={`search/${search}`} >
         <button
-          class="btn btn-outline-secondary"
+          className="btn btn-outline-secondary"
           type="submit"
           id="button-addon2"
           onSubmit={(e) => {
@@ -60,7 +60,7 @@ const HeaderMiddleBar = ({
             textAlign: "center",
           }}
         >
-          <i className="fa-solid fa-search" />
+          <i className="fa-solid fa-search " />
         </button>
 
         <Outlet />

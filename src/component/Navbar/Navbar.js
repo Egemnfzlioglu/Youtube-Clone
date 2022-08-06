@@ -19,7 +19,7 @@ const Navbar = ({
     <ul
       className={`navbar navbar-expand-lg  sticky-top ${theme}`}
       style={{
-        width: "100vw",
+        width: "100%",
         maxHeight: "7vh",
         display: "flex",
         justifyContent: "space-between",
@@ -45,7 +45,7 @@ const Navbar = ({
           fetchSearch={fetchSearch}
           searchItems={searchItems}
         />
-        <div style={{ padding: "2rem" }}>
+        <div>
           <MicIcon />
         </div>
       </div>

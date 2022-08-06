@@ -33,18 +33,4 @@ const Videos = ({
 
 export default Videos;
 
-// <ReactPlayer
-// url={`https://www.youtube.com/watch?v=${item.id}&ab_channel=${item.snippet.channelTitle}`}
-// title="YouTube video player"
-// height={`${item.height}px`}
-// width={`${item.width}px}`}
-// controls={true}
-// playing={false}
-// loop={true}
 
-// muted={true}
-
-// frameBorder="1"
-// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-// allowFullScreen
-// />
