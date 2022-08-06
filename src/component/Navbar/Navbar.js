@@ -30,6 +30,7 @@ const Navbar = ({
       }}
     >
       <NavbarLeftComponent theme={theme} />
+      
 
       <div
         style={{
