@@ -1,5 +1,5 @@
 
-https://youtube-clone-egemen.netlify.app/
+https://youtube-clone-egemen.netlify.app
 
 
 
