@@ -3,12 +3,13 @@ export const YoutubeContext = React.createContext();
 
 // https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=kafalar&key=AIzaSyA22spR8sAYEDiTml5puNbKnvhV7qoez5s
 
-// AIzaSyA22spR8sAYEDiTml5puNbKnvhV7qoez5s
 
 // const API_KEY_SEARCH = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
-const API_KEY = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
+// const API_KEY = "AIzaSyCOoquLockIxYZVE5nreKPDMDbVTh6KT-U";
+const API_KEY = "AIzaSyDsvRhUkLjmGl1hP_X_5auWhbAhiFL5D-Q";
 const BASE_URL = "https://youtube.googleapis.com/youtube/v3/videos?"; //soru işareti olmadan hata veriyor.
-const BASE_URL_SEARCH = "https://youtube.googleapis.com/youtube/v3/search?"; //soru işareti olmadan hata veriyor.
+const BASE_URL_SEARCH = "https://www.googleapis.com/youtube/v3/search?"; //soru işareti olmadan hata veriyor.
+// const BASE_URL_SEARCH = "https://youtube.googleapis.com/youtube/v3/search?"; //soru işareti olmadan hata veriyor.
 // yardımcı kaynak https://youtu.be/fOKgHld96mU?t=1700
 
 // yardımcı kaynak
@@ -22,13 +23,13 @@ export const YoutubeProvider = ({ children }) => {
   const [search, setSearch] = useState("");
   const [searchItems, setSearchItems] = useState([]);
 
-  const fetchVideo = async (search) => {
+  const fetchVideo = async () => {
     setLoading(true);
     const response = await fetch(
       BASE_URL +
         new URLSearchParams({
           key: API_KEY,
-          maxResults: 30,
+          maxResults: 15,
           part: "snippet",
           chart: "mostPopular",
           type: "video",
@@ -53,7 +54,7 @@ export const YoutubeProvider = ({ children }) => {
         new URLSearchParams({
           q: search,
           key: API_KEY,
-          maxResults:30,
+          maxResults:15,
           part: "snippet",
         })
     );
@@ -63,12 +64,13 @@ export const YoutubeProvider = ({ children }) => {
     });
     setSearchItems(json.items);
     setLoading(false);
-    console.log(json.items);
+    // console.log(json.items);
   };
 
   useEffect(() => {
     if (search) {
       fetchVideo(search);
+      fetchSearch(search);
       setLoading(false);
       // {console.log(fetchVideo(search));}
     }
@@ -77,6 +79,7 @@ export const YoutubeProvider = ({ children }) => {
   useEffect(() => {
     if (!search) {
       fetchVideo();
+      fetchSearch();
       setLoading(false);
     }
   }, [search]);
